@@ -1,0 +1,37 @@
+
+
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+
+
+.hideme {display: none;    font-size: 13px;font-weight: 400 !important;}
+.list-group-item {
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+.list-group-item {font-family: 'Open Sans', sans-serif;}
+
+.text-muted {
+    color: #fffbfb !important;
+    /* background: #272525; */
+    padding: 6px;
+    border-radius: 5px;
+    font-size: 14px;
+    padding-left: 0;
+}
+
+
+.mb-1, .my-1 {
+    margin-bottom: 0.25rem !important;
+    font-weight: 700;
+}
+
+
+
+
+
+
+
+
+
