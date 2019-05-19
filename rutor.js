@@ -14,9 +14,7 @@ const cheerio = require('cheerio');
 
 
 
-var html = db.get('posts')
-	.orderBy('popularity', 'desc').take(100)
-	.value();
+var html;
 
 
 var get_html = function (callback, i)
@@ -52,7 +50,7 @@ var get_html = function (callback, i)
 
 function updatefeeds()
 {
-	console.log('feeds update');
+	
 	var fileData = [];
 	db.get('posts').remove().write();
 	db.defaults(
@@ -75,16 +73,25 @@ function updatefeeds()
 
 
 	}
+
+	return;
 }
 
 
 
-updatefeeds();
-setInterval(updatefeeds, 3600);
-
 app.use(express.static('html'))
+
+
 app.get('/api', (req, res) =>
 {
-	res.send(html);
+
+    html = db.get('posts')
+	.orderBy('popularity', 'desc').take(100)
+	.value();
+
+	updatefeeds(); res.send(html);
+	
 })
+
+
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))

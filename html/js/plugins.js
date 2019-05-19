@@ -34,8 +34,8 @@ function divopen(i) {
 jQuery(document).ready(function($) {
 
     setInterval(function() {
-        update();
-        console.log('tick');
+       // update();
+       // console.log('tick');
     }, 10000);
 
     function update() {
