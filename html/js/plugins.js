@@ -1,9 +1,4 @@
 
-function divopen(i) {
-    $(i).find('.hideme').toggle();
-}
-
-
 jQuery(document).ready(function ($) {
     
     function sort() {
