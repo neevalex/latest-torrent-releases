@@ -1,10 +1,6 @@
 const express = require('express')
 const app = express()
-var path = require('path');
-const low = require('lowdb')
-const FileSync = require('lowdb/adapters/FileSync')
-const adapter = new FileSync('db.json')
-const db = low(adapter);
+
 var request = require('request-promise');
 const cheerio = require('cheerio');
 var html;
@@ -42,9 +38,9 @@ var get_html = async function (i, res) {
 
 app.use(express.static('html'))
 app.get('/api/:page', (req, res) => {
-	console.log(req.params.page);
+	//console.log(req.params.page);
 	get_html(req.params.page, res).then(function (result) {
-			console.log(result.length);
+			//console.log(result.length);
 		res.send(result);
 		})
 		.catch(function (error) {
